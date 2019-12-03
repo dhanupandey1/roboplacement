@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<style type="text/css">
+  .container{
+    background-color: silver;
+  }
+</style>
+</head>
 <body>
 
-<h2>HTML Forms</h2>
 
 <form action="/job/admin/<%=id%>" method="POST">
-  job_type:<br>
-  <input type="text" name="job_type" >
+  <div class="container form-group">
+<h2>Post A Job</h2>
   <br>
-  job_title:<br>
+  Job Type:<br>
+  <input type="text" name="job_type" >
+  <br><br>
+  
+  Job Title:<br>
 
   <input type="text" name="job_title">
   <br><br>
+  Job Location:<br>
   <input type="text" name="job_location" >
   <br><br>
+  Job Description:<br>
   <input type="text" name="job_description" >
   <br><br>
+  Job CTC:<br>
   <input type="text" name="job_ctc">
   <br><br>
-  <input type="submit" value="Submit">
+  <input class=""type="submit" value="Submit">
+</div>
 </form>
 
 

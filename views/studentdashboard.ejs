@@ -61,9 +61,12 @@
 
 
       <div class="starter-template">
-        <p class="lead" align = "center"> Welcome <%= name %>     </p>
-          <a href="/">Logout</a>
-
+        <p class="lead" align = "right"> Welcome <%= name %>     </p>
+        <p align="right"><a align="right" href="/">Logout</a></p>
+      </div>
+      <hr style="border: 1px solid;">
+      <hr style="border: 1px solid;">
+      <div class="container">
       <%
         for(var i=0;i<job.length;i++)
         {
@@ -72,14 +75,15 @@
           <h5 class="card-header"><%= job[i].job_title%></h5>
           <div class="card-body">
             <h5 class="card-title"><%=job[i].job_location%></h5>
-              <h5 class="card-title"><%=job[i].job_ctc%></h5>
+              <h5 class="card-title"><%=job[i].job_ctc%> &nbspLPA</h5>
               <h5 class="card-title"><%=job[i].job_type%></h5>
             <p class="card-text"><%=job[i].job_description%></p>
             <a href="/job/apply/<%=job[i]._id%>/<%=email%>" class="btn btn-primary">Apply</a>
           </div>
         </div>
+        <br>
         <%}%>
-
+      </div>
       </div>
 
     </main><!-- /.container -->
