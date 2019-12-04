@@ -148,5 +148,38 @@ router.post('/admin/:id' , (req,res)=>{
     })
 
  })
- 
+
+ router.get("/search/getjobs",(req,res)=>{
+
+ async function getJobByLocation()
+     {
+     await client.search({
+         index: 'jobpostcontroller',
+         type: 'jobtype',
+         body: {
+          query: {
+               match: {
+                job_type: req.body.job_type
+                   }
+                 }
+               }
+          },function(err,resp,status){
+             if(err){
+                 console.log(err);
+             }
+             else{
+                 let responsecity=[];
+                 if(resp.hits.total.value<1) {
+               res.status(200).send("No jobs match that query, please try again.");
+             }else{
+                    resp.hits.hits.forEach(function(hit){
+                     responsecity.push(hit);
+                     console.log(responsecity);
+                 });
+                    res.status(200).send(responsecity);
+             }}
+          });
+     }
+     getJobByLocation();
+});
  module.exports = router;
