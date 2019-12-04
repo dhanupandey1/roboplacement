@@ -121,8 +121,8 @@ if (req.body.submit === "Submit Code") {
   switch(lang){
    case "Node": console.log(typeof (x));
                  y = eval(x);
-                //res.render("home",{y:y});
-                res.status(200).json({ output: y });
+                res.render("home",{y:y});
+                //res.status(200).json({ output: y });
     break;
    case "Python":
                  y = python.runSource(sourcecode);//,executionPath:'/home/dhanu/anaconda3/bin/python3.6'
@@ -130,7 +130,7 @@ if (req.body.submit === "Submit Code") {
                   .then(result => {
                     console.log(result);
 
-                    //  res.render("home",{y:result.stdout});
+                     res.render("home",{y:result.stdout});
                     //res.render("home",{y:result.stdout,err:result.stderr});
                     res.status(200).json({ output: y });
                   })
@@ -145,8 +145,8 @@ if (req.body.submit === "Submit Code") {
                     console.log(result);
 
                     //  res.render("home",{y:result.stdout});
-                    //res.render("home",{y:result.stdout,err:result.stderr});
-                    res.status(200).json({ output: y });
+                    res.render("home",{y:result.stdout,err:result.stderr});
+                  //  res.status(200).json({ output: y });
                   })
                   .catch(err => {
                     console.log(err);
@@ -159,8 +159,8 @@ if (req.body.submit === "Submit Code") {
                     console.log(result);
 
                     //res.render("home",{y:result.stdout,err:result.stderr});
-                    //res.render("home",{y:result.stdout,err:result.stderr});
-                    res.status(200).json({ output: y });
+                    res.render("home",{y:result.stdout,err:result.stderr});
+                    //res.status(200).json({ output: y });
                   })
                   .catch(err => {
                     console.log(err);
@@ -217,8 +217,8 @@ else{
                       function (err, data, stderr) {
                         console.log(data);
 
-                        // res.render("home",{y:data});
-                        res.status(200).json({ output: data });
+                         res.render("home",{y:data});
+                        //res.status(200).json({ output: data });
                       }
 
                     )

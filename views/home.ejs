@@ -3,13 +3,13 @@
 <h1>This is the home page of the Ide</h1>
 
 <div class="container" id="text-box">
-  <form class="" action="/" method="POST">
+  <form class="" action="/proide/photos" method="POST">
     <div class="form-group">
         <label for="input code">Enter Your Code Here !</label>
         <textarea class="form-control" id="input" rows="7" name="input1"></textarea>
         <div class="form-check-inline">
       <label class="form-check-label" for="radio1">
-        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="Node" checked>Node
+        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="Node" checked>JavaScript
       </label>
     </div>
     <div class="form-check-inline">
@@ -28,11 +28,11 @@
         <input type="radio" class="form-check-input" id="radio2" name="optradio" value="C">C
       </label>
     </div>
-    <div class="form-check-inline">
+    <!-- <div class="form-check-inline">
       <label class="form-check-label">
         <input type="radio" class="form-check-input" id="radio2" name="optradio" value="Java">Java
       </label>
-    </div>
+    </div> -->
     <div class="form-check-inline">
       <label class="form-check-label">
         <input type="radio" class="form-check-input" id="radio2" name="optradio" value="Ruby">Ruby
@@ -43,11 +43,11 @@
         <input type="radio" class="form-check-input" id="radio2" name="optradio" value="Go">Go
       </label>
     </div>
-    <div class="form-check-inline">
+    <!-- <div class="form-check-inline">
       <label class="form-check-label">
         <input type="radio" class="form-check-input" id="radio2" name="optradio" value="Php">Php
       </label>
-    </div>
+    </div> -->
     </div>
     <button class="btn btn-success">Run</button>
     <input type="submit" class="btn btn-primary"name="submit" value="Submit Code"/>
@@ -62,7 +62,7 @@
         <% if (typeof(y)!=='undefined') { %>
         Output:  <%= y %>
         <%}if(typeof(err)!=='undefined') {%>
-            error:<%=err%>
+            <%=err%>
          <%}%>
 
 
