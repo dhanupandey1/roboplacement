@@ -1,0 +1,12 @@
+#player{
+    display: none;
+}
+
+#canvas{
+    display: none;
+}
+
+#capture,#myForm{
+    display: none;
+}
+

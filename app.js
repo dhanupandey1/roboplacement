@@ -94,6 +94,8 @@ app.use('/api/', apiLimiter);
 //User Controller with POST, GET, PUT methods
 var registercontroller = require(__root + 'Register/registercontroller');
 var jobpostcontroller = require(__root + 'jobpost/jobpostcontroller');
+var ide = require(__root + 'ide/hcjs.js');
+var proide = require(__root + 'ide/ide.js');
 
 
 
@@ -103,10 +105,8 @@ app.get("/",function (req,res) {
 });
 app.use('/register', registercontroller);
 app.use('/job',jobpostcontroller);
-
-
-
-
+app.use('/ide',ide);
+app.use('/proide',proide);
 app.listen(3000, (req, res) => {
     console.log('connected to port');
 

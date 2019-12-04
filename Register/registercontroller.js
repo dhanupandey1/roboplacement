@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 var router = express.Router();
 var Admin = require('./admin');
 var Job   = require('../jobpost/job');
+var Applied   = require('../jobpost/applied');
 var Student = require('./student');
 var bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({
@@ -65,10 +66,10 @@ router.post('/' , (req,res)=>{
 
    router.post('/login' , (req,res)=>{
           var x = req.body.input;
-          console.log(x);
+          // console.log(x);
          email = req.body.email;
          password=req.body.password;
-         console.log(email)
+         // console.log(email)
          if(x=="Student"){
          Student.find({userid:email},(err,user)=>{
            if(err)
@@ -78,7 +79,7 @@ router.post('/' , (req,res)=>{
            else{
              Job.find({}).sort({_id:-1}).limit(6).exec((err,jobs)=>{
                user=user[0]
-               console.log(user.password)
+               // console.log(user.password)
                if(user.password==password)
                {
                  res.render("studentdashboard.ejs",{name:user.name,email:user.userid,job:jobs});
@@ -97,7 +98,7 @@ router.post('/' , (req,res)=>{
            }
            else{
              user=user[0]
-             console.log(user.password)
+             // console.log(user.password)
              if(user.password==password)
              {
                res.render("admindashboard.ejs",{name:user.name,email:user.userid});
@@ -111,12 +112,40 @@ router.post('/' , (req,res)=>{
 
 router.get('/:id',(req,res)=>{
 Job.find({},(err,jobs)=>{
-  console.log(jobs);
+  // console.log(jobs);
   res.render("jobstemplate.ejs",{job:jobs});
 });
 
 
 });
+
+router.get('/:ssid/appliedjobs',(req,res)=>{
+Student.find({userid:req.params.ssid},(err,student)=>{
+  stuent= student[0];
+  //console.log(student[0].name);
+if(err)
+{
+  console.log(err);
+}
+else{
+  arr=[];
+  //Student.find({},{_id:0, name:1, applied:{$elemMatch:{$eq:jobs[i]._id}}}, (err,result)
+ Applied.find({name:student[0].name},(err,result)=>{
+  //var x  =   result[0].jname;
+  console.log(result);
+  for(i=0;i<result.length;i++)
+  {
+    arr.push(result[i].jname)
+  //  console.log(arr[i]);
+  }
+//  console.log(x);
+ res.render("studentjobs.ejs",{x:arr})
+  })
+}
+});
+
+});
+
 
 
 // router.get('/', (req, res) => {

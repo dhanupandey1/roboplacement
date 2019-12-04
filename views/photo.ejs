@@ -1,0 +1,12 @@
+<% include ./partials/header %>
+    <video id = "player" autoplay></video>
+    <button id="capture">Capture</button>
+    <canvas id="canvas" width="320" height="240"></canvas>
+    <!-- <img src="" id="photo" alt="photo"> -->
+    <form action="/proide/photos" method="POST" id="myForm" enctype="multipart/form-data">
+        <input type="text" id="image" name="image">
+        <input type="text" id="image_url" name="image_url">
+        <input type="submit" value="save photo">
+    </form>
+    <script src="/scripts/scripts.js"></script>
+<% include ./partials/footer %>

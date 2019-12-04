@@ -14,7 +14,11 @@ Job:
 [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Job'
-}]
+}],
+nameofstudent:{
+  name : String,
+  job : String
+}
 });
 
 

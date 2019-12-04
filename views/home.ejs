@@ -1,0 +1,75 @@
+<% include ./partials/header %>
+
+<h1>This is the home page of the Ide</h1>
+
+<div class="container" id="text-box">
+  <form class="" action="/" method="POST">
+    <div class="form-group">
+        <label for="input code">Enter Your Code Here !</label>
+        <textarea class="form-control" id="input" rows="7" name="input1"></textarea>
+        <div class="form-check-inline">
+      <label class="form-check-label" for="radio1">
+        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="Node" checked>Node
+      </label>
+    </div>
+    <div class="form-check-inline">
+      <label class="form-check-label" for="radio2">
+        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="Python">Python
+      </label>
+    </div>
+    <div class="form-check-inline">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="Cplus">C++
+      </label>
+    </div>
+
+    <div class="form-check-inline">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="C">C
+      </label>
+    </div>
+    <div class="form-check-inline">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="Java">Java
+      </label>
+    </div>
+    <div class="form-check-inline">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="Ruby">Ruby
+      </label>
+    </div>
+    <div class="form-check-inline">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="Go">Go
+      </label>
+    </div>
+    <div class="form-check-inline">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="Php">Php
+      </label>
+    </div>
+    </div>
+    <button class="btn btn-success">Run</button>
+    <input type="submit" class="btn btn-primary"name="submit" value="Submit Code"/>
+  </form>
+
+</div>
+
+<div class="container" id="text-box">
+    <div class="form-group">
+        <label for="output">Output Your Code Here !</label>
+        <textarea class="form-control" id="output" rows="3" >
+        <% if (typeof(y)!=='undefined') { %>
+        Output:  <%= y %>
+        <%}if(typeof(err)!=='undefined') {%>
+            error:<%=err%>
+         <%}%>
+
+
+        </textarea>
+    </div>
+
+</div>
+
+
+<% include ./partials/footer %>

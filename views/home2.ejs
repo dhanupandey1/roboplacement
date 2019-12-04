@@ -1,0 +1,20 @@
+<% include ./partials/header %>
+
+<div class="all_editors">
+    <div id="html-editor"></div>
+    <div id="css-editor"></div>
+    <div id="js-editor"></div>
+</div>
+
+<form action="/" method="POST" id="myForm">
+    <input type="text" name="html" id="html">
+    <input type="text" name="css" id="css">
+    <input type="text" name="js" id="js">
+    <input type="submit" value="Submit" class="btn btn-success btn-block" id="button">
+</form>
+
+<div id="result-block">
+    <iframe id="result" frameborder="0"></iframe>
+</div>
+
+<% include ./partials/footer %>
